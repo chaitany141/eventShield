@@ -43,7 +43,7 @@ export const MetricCards: React.FC<MetricCardsProps> = ({ snapshot }) => {
           </div>
         </div>
         <div className="flex items-baseline space-x-2">
-          <span className="text-2xl font-bold font-mono tracking-tight text-white">{incomingRps}</span>
+          <span className="text-2xl font-bold font-mono tracking-tight text-slate-900">{incomingRps}</span>
           <span className="text-xs font-mono text-slate-400">req/s</span>
         </div>
         <div className="mt-2 flex items-center justify-between text-[11px] text-slate-400 pt-2 border-t border-slate-800/60">
@@ -131,7 +131,7 @@ export const MetricCards: React.FC<MetricCardsProps> = ({ snapshot }) => {
           </div>
         </div>
         <div className="flex items-baseline space-x-2">
-          <span className="text-2xl font-bold font-mono tracking-tight text-white">{avgLatency}</span>
+          <span className="text-2xl font-bold font-mono tracking-tight text-slate-900">{avgLatency}</span>
           <span className="text-xs font-mono text-slate-400">ms</span>
         </div>
         <div className="mt-2 flex items-center justify-between text-[11px] text-slate-400 pt-2 border-t border-slate-800/60">

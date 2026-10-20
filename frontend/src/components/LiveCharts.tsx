@@ -108,16 +108,16 @@ export const LiveCharts: React.FC<LiveChartsProps> = ({ history, backends }) => 
           </div>
           <div className="flex items-center space-x-3 text-[10px] font-mono">
             <span className="flex items-center space-x-1">
-              <span className="w-2 h-0.5 bg-blue-400 inline-block" />
-              <span className="text-blue-300">Incoming</span>
+              <span className="w-2 h-0.5 bg-blue-500 inline-block" />
+              <span className="text-blue-600">Incoming</span>
             </span>
             <span className="flex items-center space-x-1">
-              <span className="w-2 h-0.5 bg-emerald-400 inline-block" />
-              <span className="text-emerald-300">Processed</span>
+              <span className="w-2 h-0.5 bg-emerald-600 inline-block" />
+              <span className="text-emerald-700">Processed</span>
             </span>
             <span className="flex items-center space-x-1">
-              <span className="w-2 h-0.5 bg-rose-400 inline-block" />
-              <span className="text-rose-300">Throttled</span>
+              <span className="w-2 h-0.5 bg-rose-500 inline-block" />
+              <span className="text-rose-700">Throttled</span>
             </span>
           </div>
         </div>
@@ -125,9 +125,9 @@ export const LiveCharts: React.FC<LiveChartsProps> = ({ history, backends }) => 
         <div className="relative w-full overflow-hidden">
           <svg viewBox={`0 0 ${width} ${height}`} className="w-full h-auto select-none">
             {/* Grid Lines */}
-            <line x1={padding.left} y1={padding.top} x2={width - padding.right} y2={padding.top} stroke="#1e293b" strokeDasharray="3 3" />
-            <line x1={padding.left} y1={padding.top + graphHeight / 2} x2={width - padding.right} y2={padding.top + graphHeight / 2} stroke="#1e293b" strokeDasharray="3 3" />
-            <line x1={padding.left} y1={padding.top + graphHeight} x2={width - padding.right} y2={padding.top + graphHeight} stroke="#334155" />
+            <line x1={padding.left} y1={padding.top} x2={width - padding.right} y2={padding.top} stroke="#e8edf3" strokeDasharray="3 3" />
+            <line x1={padding.left} y1={padding.top + graphHeight / 2} x2={width - padding.right} y2={padding.top + graphHeight / 2} stroke="#e8edf3" strokeDasharray="3 3" />
+            <line x1={padding.left} y1={padding.top + graphHeight} x2={width - padding.right} y2={padding.top + graphHeight} stroke="#d9e1ea" />
 
             {/* Y Axis Labels */}
             <text x={padding.left - 6} y={padding.top + 4} fill="#64748b" fontSize="9" textAnchor="end" fontFamily="monospace">
@@ -141,9 +141,9 @@ export const LiveCharts: React.FC<LiveChartsProps> = ({ history, backends }) => 
             </text>
 
             {/* Paths */}
-            <path d={incomingPath} fill="none" stroke="#60a5fa" strokeWidth="2" strokeLinecap="round" />
-            <path d={processedPath} fill="none" stroke="#34d399" strokeWidth="2" strokeLinecap="round" />
-            <path d={rateLimitedPath} fill="none" stroke="#f87171" strokeWidth="1.5" strokeDasharray="4 2" />
+            <path d={incomingPath} fill="none" stroke="#53799f" strokeWidth="2" strokeLinecap="round" />
+            <path d={processedPath} fill="none" stroke="#59836e" strokeWidth="2" strokeLinecap="round" />
+            <path d={rateLimitedPath} fill="none" stroke="#b77979" strokeWidth="1.5" strokeDasharray="4 2" />
           </svg>
         </div>
       </div>
@@ -161,17 +161,17 @@ export const LiveCharts: React.FC<LiveChartsProps> = ({ history, backends }) => 
               <span className="text-slate-300">Avg</span>
             </span>
             <span className="flex items-center space-x-1">
-              <span className="w-2 h-0.5 bg-indigo-400 inline-block" />
-              <span className="text-indigo-300">p95 Tail</span>
+              <span className="w-2 h-0.5 bg-indigo-500 inline-block" />
+              <span className="text-indigo-600">p95 Tail</span>
             </span>
           </div>
         </div>
 
         <div className="relative w-full overflow-hidden">
           <svg viewBox={`0 0 ${width} ${height}`} className="w-full h-auto select-none">
-            <line x1={padding.left} y1={padding.top} x2={width - padding.right} y2={padding.top} stroke="#1e293b" strokeDasharray="3 3" />
-            <line x1={padding.left} y1={padding.top + graphHeight / 2} x2={width - padding.right} y2={padding.top + graphHeight / 2} stroke="#1e293b" strokeDasharray="3 3" />
-            <line x1={padding.left} y1={padding.top + graphHeight} x2={width - padding.right} y2={padding.top + graphHeight} stroke="#334155" />
+            <line x1={padding.left} y1={padding.top} x2={width - padding.right} y2={padding.top} stroke="#e8edf3" strokeDasharray="3 3" />
+            <line x1={padding.left} y1={padding.top + graphHeight / 2} x2={width - padding.right} y2={padding.top + graphHeight / 2} stroke="#e8edf3" strokeDasharray="3 3" />
+            <line x1={padding.left} y1={padding.top + graphHeight} x2={width - padding.right} y2={padding.top + graphHeight} stroke="#d9e1ea" />
 
             <text x={padding.left - 6} y={padding.top + 4} fill="#64748b" fontSize="9" textAnchor="end" fontFamily="monospace">
               {Math.round(maxLat)}ms
@@ -183,8 +183,8 @@ export const LiveCharts: React.FC<LiveChartsProps> = ({ history, backends }) => 
               0ms
             </text>
 
-            <path d={avgLatPath} fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeLinecap="round" />
-            <path d={p95LatPath} fill="none" stroke="#818cf8" strokeWidth="2" strokeLinecap="round" />
+            <path d={avgLatPath} fill="none" stroke="#8997a8" strokeWidth="1.5" strokeLinecap="round" />
+            <path d={p95LatPath} fill="none" stroke="#7889a3" strokeWidth="2" strokeLinecap="round" />
           </svg>
         </div>
       </div>
@@ -203,15 +203,9 @@ export const LiveCharts: React.FC<LiveChartsProps> = ({ history, backends }) => 
 
         <div className="relative w-full overflow-hidden">
           <svg viewBox={`0 0 ${width} ${height}`} className="w-full h-auto select-none">
-            <defs>
-              <linearGradient id="queueGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#06b6d4" stopOpacity="0.3" />
-                <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.0" />
-              </linearGradient>
-            </defs>
-            <line x1={padding.left} y1={padding.top} x2={width - padding.right} y2={padding.top} stroke="#1e293b" strokeDasharray="3 3" />
-            <line x1={padding.left} y1={padding.top + graphHeight / 2} x2={width - padding.right} y2={padding.top + graphHeight / 2} stroke="#1e293b" strokeDasharray="3 3" />
-            <line x1={padding.left} y1={padding.top + graphHeight} x2={width - padding.right} y2={padding.top + graphHeight} stroke="#334155" />
+            <line x1={padding.left} y1={padding.top} x2={width - padding.right} y2={padding.top} stroke="#e8edf3" strokeDasharray="3 3" />
+            <line x1={padding.left} y1={padding.top + graphHeight / 2} x2={width - padding.right} y2={padding.top + graphHeight / 2} stroke="#e8edf3" strokeDasharray="3 3" />
+            <line x1={padding.left} y1={padding.top + graphHeight} x2={width - padding.right} y2={padding.top + graphHeight} stroke="#d9e1ea" />
 
             <text x={padding.left - 6} y={padding.top + 4} fill="#64748b" fontSize="9" textAnchor="end" fontFamily="monospace">
               {Math.round(maxQueue)}
@@ -223,8 +217,8 @@ export const LiveCharts: React.FC<LiveChartsProps> = ({ history, backends }) => 
               0
             </text>
 
-            <path d={queueAreaPath} fill="url(#queueGradient)" />
-            <path d={queuePath} fill="none" stroke="#22d3ee" strokeWidth="2" strokeLinecap="round" />
+            <path d={queueAreaPath} fill="#eaf1f7" />
+            <path d={queuePath} fill="none" stroke="#537f9e" strokeWidth="2" strokeLinecap="round" />
           </svg>
         </div>
       </div>
@@ -256,7 +250,7 @@ export const LiveCharts: React.FC<LiveChartsProps> = ({ history, backends }) => 
                       }`}
                     />
                     <span className="font-mono text-slate-300 font-medium">{b.id}</span>
-                    <span className="text-[10px] text-slate-400 truncate max-w-[130px] hidden sm:inline">
+                    <span className="text-[10px] text-slate-400 truncate max-w-32.5 hidden sm:inline">
                       ({b.name})
                     </span>
                   </div>
